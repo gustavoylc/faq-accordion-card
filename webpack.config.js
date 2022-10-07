@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
-const TerserWebpackPlugin = require("terser-webpack-plugin");
 
 module.exports = {
 	entry: "./src/index.jsx",
@@ -18,7 +17,12 @@ module.exports = {
 	mode: "development",
 	resolve: {
 		extensions: [".js", ".jsx"],
-		alias: { "@components": path.resolve(__dirname, "src/components/") },
+		alias: {
+			"@components": path.resolve(__dirname, "src/components/"),
+			"@pages": path.resolve(__dirname, "src/pages/"),
+			"@images": path.resolve(__dirname, "src/assets/images"),
+			"@hooks": path.resolve(__dirname, "src/hooks/"),
+		},
 	},
 	module: {
 		rules: [
