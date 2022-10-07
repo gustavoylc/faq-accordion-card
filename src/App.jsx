@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Theme } from "./styles/Theme";
+import { FAQ } from "@pages/FAQ";
+
 
 export const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+	const [theme, setTheme] = React.useState("dark");
+	return (
+		<Theme theme={theme}>
+			<FAQ />
+		</Theme>
+	);
+};
